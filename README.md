@@ -1,2 +1,3 @@
 # tallerdepintura
- https://myriampp.github.io/tallerdepintura/index.html
+Página web estática responsive
+
