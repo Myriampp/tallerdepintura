@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap');
-
+/*variables globales*/
 :root{
     --color-primary:#444CF7;
     --color-title: #000;
@@ -13,6 +13,7 @@
     --height-shape:18em;
     
 }
+
 body{
     font-family: 'Raleway', sans-serif;
     background-color: #dbca77;
@@ -312,7 +313,7 @@ body{
     height: 100px;
     background: #fff;
     top: 0;
-    left: 0%;
+    left: 0;
     clip-path: polygon(0 0, 100% 0, 50% 100%);
 
 }
@@ -322,6 +323,11 @@ body{
     gap: 20px;
     place-items: center;
     margin-bottom: 30px;
+
+}
+.footer__texts{
+    text-align: left;
+    justify-self: left;
 }
 
 .footer__copy{
@@ -463,21 +469,28 @@ footer__social{
 
 }
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 768px){
     :root{
-        --padding-btn: 20px 0;
+        --height-shape:18em;
+        --padding-btn: 40px 0;
     }
     .hero__container{
-        --padding-container: 45px 0;
+        --padding-container: 60px 10;
+    }
+    .hero__img{
+        width: 70%;
+        height: 70%;
     }
     .hero__texts{
         text-align: center;
     }
-    .title{
-        font-size: 2rem;
+    .hero__title{
+        font-size: 3.8rem;
     }
     .hero__cta{
         display: block;
+       padding: 10px;
+
     }
     .instructor{
         --padding-container:60px 0;
@@ -488,10 +501,17 @@ footer__social{
 
     /*About*/
     .about{
-        gap: 40px;
-       
+        grid-template-columns: 1fr;
+        grid-template-rows: max-content 1fr;
+       gap: 80px;
        }
     .about__course{
+        width: 100%;
+    }
+    .about__picture{
+       order: -1;
+    }
+    .about__img{
         width: 100%;
     }
 
@@ -500,11 +520,30 @@ footer__social{
         width: 97%;
         grid-template-columns: 1fr;
         grid-area:
-        "card1"
-        "card2"
-        "card3"
-        "card4";
+        "card1 .    "
+        "card1 card2"
+        "card3 card2"
+        "card3 card4"
+        ".     card4";
+    }
+    /*course*/
+    .course{
+    grid-template-columns: repeat(6,1fr);
+    }
+    .course__about{
+        grid-column: 1/6;
+    }
+    .course__about--left{
+        grid-column: 2/-1;
+    }
+    .course__picture{
+        grid-column: 2/-1;
+    }
+    .course__about--left{
+        grid-column: 1/6;
     }
 
+
+/*footer*/
 
 }
